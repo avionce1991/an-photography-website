@@ -73,7 +73,7 @@ const Contact = () => {
                 <div>
                   <p className="heading-caps text-xs text-muted-foreground mb-1">Lokacija</p>
                   <p className="font-serif text-xl italic">
-                    [DODAJ LOKACIJU]
+                    Niš, Srbija
                   </p>
                 </div>
               </div>

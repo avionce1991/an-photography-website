@@ -14,7 +14,7 @@ const HeroSection = () => {
       <img
         src={heroImg}
         alt="Wedding photography by Aleksandar Ničić"
-        className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-[2s] ${
+        className={`absolute inset-0 w-full h-full object-cover object-bottom transition-all duration-[2s] ${
           loaded ? "scale-100 opacity-100" : "scale-110 opacity-0"
         }`}
         onLoad={() => setLoaded(true)}

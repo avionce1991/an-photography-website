@@ -60,30 +60,16 @@ const HorizontalGallery = () => {
           {images.map((img, i) => (
             <div
               key={i}
-              className="flex-shrink-0 h-full"
+              className="flex-shrink-0 h-full bg-background"
               style={{ width: "100vw" }}
             >
               <img
                 src={img}
                 alt={`Wedding photography ${i + 1}`}
-                className="w-full h-full object-cover"
+                className={`w-full h-full ${i === 3 ? "object-contain" : "object-cover"}`}
                 loading="lazy"
               />
             </div>
-          ))}
-        </div>
-
-        {/* Progress indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3">
-          {images.map((_, i) => (
-            <div
-              key={i}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                Math.round(scrollProgress * (totalImages - 1)) === i
-                  ? "bg-primary-foreground scale-125"
-                  : "bg-primary-foreground/40"
-              }`}
-            />
           ))}
         </div>
       </div>

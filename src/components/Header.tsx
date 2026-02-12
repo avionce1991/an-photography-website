@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
@@ -16,6 +16,8 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-12 py-4 md:py-6 bg-background/80 backdrop-blur-sm">
+        <div className="flex-1" />
+        
         <Link to="/" className="flex items-center gap-2 md:gap-3">
           <h1 className="font-serif text-sm md:text-xl tracking-[0.3em] font-light uppercase whitespace-nowrap">
             Aleksandar Ničić
@@ -23,13 +25,15 @@ const Header = () => {
           <img src={logo} alt="AN Logo" className="h-7 md:h-9 w-auto" />
         </Link>
         
-        <button
-          onClick={() => setMenuOpen(true)}
-          className="heading-caps text-xs tracking-[0.2em] hover:opacity-60 transition-opacity"
-          aria-label="Open menu"
-        >
-          MENU
-        </button>
+        <div className="flex-1 flex justify-end">
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="heading-caps text-xs tracking-[0.2em] hover:opacity-60 transition-opacity"
+            aria-label="Open menu"
+          >
+            MENU
+          </button>
+        </div>
       </header>
 
       {/* Full-screen menu overlay */}

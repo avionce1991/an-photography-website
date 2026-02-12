@@ -66,7 +66,7 @@ const HorizontalGallery = () => {
               <img
                 src={img}
                 alt={`Wedding photography ${i + 1}`}
-                className={`w-full h-full object-contain ${i === 3 ? "" : "md:object-cover"}`}
+                className="w-full h-full object-contain md:object-cover"
                 loading="lazy"
               />
             </div>

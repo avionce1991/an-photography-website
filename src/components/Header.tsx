@@ -19,10 +19,10 @@ const Header = () => {
         <div className="flex-1" />
         
         <Link to="/" className="flex-1 flex items-center justify-center gap-3">
-          <img src={logo} alt="AN Logo" className="h-8 md:h-9 w-auto" />
           <h1 className="font-serif text-lg md:text-xl tracking-[0.3em] font-light uppercase">
             Aleksandar Ničić
           </h1>
+          <img src={logo} alt="AN Logo" className="h-8 md:h-9 w-auto" />
         </Link>
         
         <div className="flex-1 flex justify-end">

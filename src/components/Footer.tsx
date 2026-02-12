@@ -8,7 +8,7 @@ const Footer = () => {
           Aleksandar Ničić
         </p>
 
-        <div className="flex items-center gap-8">
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
           <a
             href="tel:+38163423715"
             className="flex items-center gap-2 heading-caps text-xs text-muted-foreground hover:text-foreground transition-colors"
@@ -17,7 +17,7 @@ const Footer = () => {
             <Phone size={16} strokeWidth={1} />
             <span>+381 63 423 715</span>
           </a>
-          
+
           <a
             href="https://www.instagram.com/an_photography91"
             target="_blank"
@@ -30,11 +30,11 @@ const Footer = () => {
           
           <a
             href="mailto:an.photography.matrimoni@gmail.com"
-            className="flex items-center gap-2 heading-caps text-xs text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-2 heading-caps text-xs text-muted-foreground hover:text-foreground transition-colors break-all"
             aria-label="Email"
           >
-            <Mail size={16} strokeWidth={1} />
-            <span>an.photography.matrimoni@gmail.com</span>
+            <Mail size={16} strokeWidth={1} className="flex-shrink-0" />
+            <span className="text-center md:text-left">an.photography.matrimoni@gmail.com</span>
           </a>
         </div>
 

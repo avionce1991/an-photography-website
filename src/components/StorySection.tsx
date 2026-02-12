@@ -34,7 +34,7 @@ const StorySection = () => {
         </div>
 
         <div
-          className={`mt-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 transition-all duration-1000 delay-300 ${
+          className={`mt-20 flex flex-col md:flex-row items-center md:items-center justify-between gap-8 text-center md:text-left transition-all duration-1000 delay-300 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >

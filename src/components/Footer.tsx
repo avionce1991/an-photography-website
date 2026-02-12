@@ -3,7 +3,7 @@ import { Instagram, Mail, Phone } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="py-16 px-6 md:px-12 border-t border-border">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 text-center">
         <p className="font-serif text-lg italic text-muted-foreground">
           Aleksandar Ničić
         </p>

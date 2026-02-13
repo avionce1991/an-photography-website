@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Contact = () => {
   const [visible, setVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 200);
@@ -17,11 +19,9 @@ const Contact = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <p className="heading-caps text-muted-foreground mb-4">Kontakt</p>
-          <h1 className="font-serif text-5xl md:text-7xl font-light italic">
-            Hajde da ispričamo
-            <br />
-            tvoju priču
+          <p className="heading-caps text-muted-foreground mb-4">{t("contact.label")}</p>
+          <h1 className="font-serif text-5xl md:text-7xl font-light italic whitespace-pre-line">
+            {t("contact.title")}
           </h1>
         </div>
 
@@ -36,7 +36,7 @@ const Contact = () => {
               <div className="flex items-start gap-4">
                 <Phone size={18} strokeWidth={1} className="mt-1 text-muted-foreground" />
                 <div>
-                  <p className="heading-caps text-xs text-muted-foreground mb-1">Telefon</p>
+                  <p className="heading-caps text-xs text-muted-foreground mb-1">{t("contact.phone")}</p>
                   <a href="tel:+38163423715" className="font-serif text-xl italic hover:opacity-60 transition-opacity">
                     +381 63 423 715
                   </a>
@@ -46,7 +46,7 @@ const Contact = () => {
               <div className="flex items-start gap-4">
                 <Mail size={18} strokeWidth={1} className="mt-1 text-muted-foreground" />
                 <div>
-                  <p className="heading-caps text-xs text-muted-foreground mb-1">Email</p>
+                  <p className="heading-caps text-xs text-muted-foreground mb-1">{t("contact.email")}</p>
                   <a href="mailto:an.photography.matrimoni@gmail.com" className="font-serif text-xl italic hover:opacity-60 transition-opacity">
                     an.photography.matrimoni@gmail.com
                   </a>
@@ -56,7 +56,7 @@ const Contact = () => {
               <div className="flex items-start gap-4">
                 <Instagram size={18} strokeWidth={1} className="mt-1 text-muted-foreground" />
                 <div>
-                  <p className="heading-caps text-xs text-muted-foreground mb-1">Instagram</p>
+                  <p className="heading-caps text-xs text-muted-foreground mb-1">{t("contact.instagram")}</p>
                   <a
                     href="https://www.instagram.com/an_photography91"
                     target="_blank"
@@ -71,9 +71,9 @@ const Contact = () => {
               <div className="flex items-start gap-4">
                 <MapPin size={18} strokeWidth={1} className="mt-1 text-muted-foreground" />
                 <div>
-                  <p className="heading-caps text-xs text-muted-foreground mb-1">Lokacija</p>
+                  <p className="heading-caps text-xs text-muted-foreground mb-1">{t("contact.location")}</p>
                   <p className="font-serif text-xl italic">
-                    Niš, Srbija
+                    {t("contact.locationValue")}
                   </p>
                 </div>
               </div>
@@ -84,7 +84,7 @@ const Contact = () => {
           <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
             <div>
               <label className="heading-caps text-xs text-muted-foreground block mb-2">
-                Ime i prezime
+                {t("contact.formName")}
               </label>
               <input
                 type="text"
@@ -93,7 +93,7 @@ const Contact = () => {
             </div>
             <div>
               <label className="heading-caps text-xs text-muted-foreground block mb-2">
-                Email
+                {t("contact.formEmail")}
               </label>
               <input
                 type="email"
@@ -102,7 +102,7 @@ const Contact = () => {
             </div>
             <div>
               <label className="heading-caps text-xs text-muted-foreground block mb-2">
-                Datum venčanja
+                {t("contact.formDate")}
               </label>
               <input
                 type="date"
@@ -111,7 +111,7 @@ const Contact = () => {
             </div>
             <div>
               <label className="heading-caps text-xs text-muted-foreground block mb-2">
-                Poruka
+                {t("contact.formMessage")}
               </label>
               <textarea
                 rows={4}
@@ -122,7 +122,7 @@ const Contact = () => {
               type="submit"
               className="link-underline heading-caps text-xs mt-4"
             >
-              POŠALJI PORUKU
+              {t("contact.formSubmit")}
             </button>
           </form>
         </div>

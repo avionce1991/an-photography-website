@@ -1,28 +1,26 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const MONTHS = [
-  "Januar", "Februar", "Mart", "April", "Maj", "Jun",
-  "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar",
-];
-
-const DAYS = ["Pon", "Uto", "Sre", "Čet", "Pet", "Sub", "Ned"];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Calendar = () => {
   const [visible, setVisible] = useState(false);
   const [currentDate, setCurrentDate] = useState(new Date());
+  const { t } = useLanguage();
 
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 200);
-    return () => clearTimeout(t);
+    const timer = setTimeout(() => setVisible(true), 200);
+    return () => clearTimeout(timer);
   }, []);
+
+  const MONTHS = t("calendar.months").split(",");
+  const DAYS = t("calendar.days").split(",");
 
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
   const firstDay = new Date(year, month, 1);
   const lastDay = new Date(year, month + 1, 0);
-  const startDay = (firstDay.getDay() + 6) % 7; // Monday = 0
+  const startDay = (firstDay.getDay() + 6) % 7;
   const daysInMonth = lastDay.getDate();
 
   const prevMonth = () => setCurrentDate(new Date(year, month - 1, 1));
@@ -32,7 +30,6 @@ const Calendar = () => {
   const isToday = (day: number) =>
     day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
 
-  // Placeholder: no booked dates yet. Connect to Google Calendar API later.
   const bookedDates: number[] = [];
   const isBooked = (day: number) => bookedDates.includes(day);
 
@@ -64,13 +61,12 @@ const Calendar = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
           }`}
         >
-          <p className="heading-caps text-muted-foreground mb-4">Kalendar</p>
+          <p className="heading-caps text-muted-foreground mb-4">{t("calendar.label")}</p>
           <h1 className="font-serif text-5xl md:text-6xl font-light italic">
-            Proveri dostupnost
+            {t("calendar.title")}
           </h1>
-          <p className="text-muted-foreground mt-4 font-light text-sm">
-            Datumi označeni precrtano su već rezervisani. 
-            Za rezervaciju kontaktirajte me putem email-a ili telefona.
+          <p className="text-muted-foreground mt-4 font-light text-sm whitespace-pre-line">
+            {t("calendar.description")}
           </p>
         </div>
 
@@ -79,7 +75,6 @@ const Calendar = () => {
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          {/* Month navigation */}
           <div className="flex items-center justify-between mb-8">
             <button
               onClick={prevMonth}
@@ -100,7 +95,6 @@ const Calendar = () => {
             </button>
           </div>
 
-          {/* Day headers */}
           <div className="grid grid-cols-7 gap-1 mb-2">
             {DAYS.map((day) => (
               <div key={day} className="text-center heading-caps text-xs text-muted-foreground py-2">
@@ -109,20 +103,18 @@ const Calendar = () => {
             ))}
           </div>
 
-          {/* Calendar grid */}
           <div className="grid grid-cols-7 gap-1">
             {cells}
           </div>
 
-          {/* Legend */}
           <div className="flex items-center gap-6 mt-8 justify-center">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 border border-foreground" />
-              <span className="heading-caps text-xs text-muted-foreground">Danas</span>
+              <span className="heading-caps text-xs text-muted-foreground">{t("calendar.today")}</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-muted" />
-              <span className="heading-caps text-xs text-muted-foreground">Rezervisano</span>
+              <span className="heading-caps text-xs text-muted-foreground">{t("calendar.booked")}</span>
             </div>
           </div>
         </div>

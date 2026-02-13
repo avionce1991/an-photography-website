@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import heroImg from "@/assets/hero-wedding.jpg";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const HeroSection = () => {
   const [loaded, setLoaded] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100);
@@ -31,13 +33,13 @@ const HeroSection = () => {
           }`}
         >
           <h1 className="font-serif italic font-light text-5xl md:text-7xl lg:text-8xl text-primary-foreground leading-[1.1]">
-            Real editorial
+            {t("hero.line1")}
           </h1>
           <h1 className="font-sans uppercase tracking-[0.15em] font-light text-4xl md:text-6xl lg:text-7xl text-primary-foreground mt-2">
-            WEDDING
+            {t("hero.line2")}
           </h1>
           <h1 className="font-serif italic font-light text-5xl md:text-7xl lg:text-8xl text-primary-foreground">
-            photography
+            {t("hero.line3")}
           </h1>
         </div>
 
@@ -46,7 +48,7 @@ const HeroSection = () => {
             loaded ? "opacity-100" : "opacity-0"
           }`}
         >
-          ALLOWING YOUR UNIQUE MOMENTS TO AGE GRACEFULLY
+          {t("hero.tagline")}
         </p>
       </div>
     </section>

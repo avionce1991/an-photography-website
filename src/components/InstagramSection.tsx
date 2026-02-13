@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Instagram } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 import masonry1 from "@/assets/masonry-1.jpg";
 import masonry2 from "@/assets/masonry-2.jpg";
@@ -11,6 +12,7 @@ const images = [masonry1, masonry2, masonry3, masonry4];
 const InstagramSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,8 +33,8 @@ const InstagramSection = () => {
         }`}
       >
         <h2 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light leading-[1.1]">
-          <span className="font-sans uppercase tracking-[0.15em]">CHECK OUT MY</span>{" "}
-          <span className="italic">instagram</span>
+          <span className="font-sans uppercase tracking-[0.15em]">{t("instagram.checkOut")}</span>{" "}
+          <span className="italic">{t("instagram.instagram")}</span>
         </h2>
       </div>
 
@@ -73,7 +75,7 @@ const InstagramSection = () => {
           className="inline-flex items-center gap-3 heading-caps text-sm border border-foreground px-8 py-4 hover:bg-foreground hover:text-background transition-all duration-300"
         >
           <Instagram size={18} strokeWidth={1} />
-          FOLLOW ME ON INSTAGRAM
+          {t("instagram.follow")}
         </a>
       </div>
     </section>

@@ -2,15 +2,18 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navItems = [
-    { label: "Početna", path: "/" },
-    { label: "Kontakt", path: "/kontakt" },
-    { label: "Kalendar", path: "/kalendar" },
+    { label: t("nav.home"), path: "/" },
+    { label: t("nav.contact"), path: "/kontakt" },
+    { label: t("nav.calendar"), path: "/kalendar" },
   ];
 
   return (
@@ -25,13 +28,14 @@ const Header = () => {
           <img src={logo} alt="AN Logo" className="h-7 md:h-9 w-auto" />
         </Link>
         
-        <div className="flex-1 flex justify-end">
+        <div className="flex-1 flex items-center justify-end gap-4 md:gap-6">
+          <LanguageSwitcher />
           <button
             onClick={() => setMenuOpen(true)}
             className="heading-caps text-xs tracking-[0.2em] hover:opacity-60 transition-opacity"
             aria-label="Open menu"
           >
-            MENU
+            {t("nav.menu")}
           </button>
         </div>
       </header>

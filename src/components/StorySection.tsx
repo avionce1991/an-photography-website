@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const StorySection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,11 +27,11 @@ const StorySection = () => {
           }`}
         >
           <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light leading-[1.1]">
-            <span className="italic">Great</span>{" "}
-            <span className="font-sans uppercase tracking-[0.1em]">STORY IS A</span>
+            <span className="italic">{t("story.great")}</span>{" "}
+            <span className="font-sans uppercase tracking-[0.1em]">{t("story.storyIs")}</span>
             <br />
-            <span className="italic">story</span>{" "}
-            <span className="font-sans uppercase tracking-[0.1em]">WELL TOLD</span>
+            <span className="italic">{t("story.story")}</span>{" "}
+            <span className="font-sans uppercase tracking-[0.1em]">{t("story.wellTold")}</span>
           </h2>
         </div>
 
@@ -39,20 +41,16 @@ const StorySection = () => {
           }`}
         >
           <div className="space-y-4">
-            <p className="heading-caps text-sm text-foreground">
-              BUT IT'S NOT ONLY ABOUT
-              <br />
-              TAKING GREAT PHOTOS
+            <p className="heading-caps text-sm text-foreground whitespace-pre-line">
+              {t("story.notOnly")}
             </p>
-            <p className="heading-caps text-sm text-foreground">
-              IT'S ABOUT PROVIDING YOU
-              <br />
-              WITH A WHOLE EXPERIENCE
+            <p className="heading-caps text-sm text-foreground whitespace-pre-line">
+              {t("story.providing")}
             </p>
           </div>
 
           <Link to="/kontakt" className="link-underline heading-caps text-sm">
-            GET IN TOUCH WITH ME
+            {t("story.cta")}
           </Link>
         </div>
       </div>

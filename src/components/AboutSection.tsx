@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import photographerImg from "@/assets/photographer-portrait.jpg";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const AboutSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,17 +26,15 @@ const AboutSection = () => {
           className={`space-y-6 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
         >
-          <p className="heading-caps text-muted-foreground">O meni</p>
+          <p className="heading-caps text-muted-foreground">{t("about.label")}</p>
           <h2 className="font-serif text-4xl md:text-5xl font-light italic leading-tight">
-            Transparentnost i odgovornost kroz objektiv
+            {t("about.title")}
           </h2>
-          <p className="text-muted-foreground leading-relaxed font-light">
-            Fotografijom se bavim više od dvadeset godina, a od 2018. godine profesionalno dokumentujem venčanja, rođendane i proslave. Moj put nije tipična priča „fotograf od malena“ — počeo sam uz računare i digitalne alate, ovladao Photoshop‑om i Lightroom‑om, a zatim se posvetio fotografisanju događaja.
-            Danas radim kao profesionalni fotograf za venčanja, rođendane i evente u Nišu, Srbiji i regionu. Od mene možete očekivati transparentnost i odgovornost: sve što dogovorimo, isporučujem tačno kako je dogovoreno. Fotografija za mene nije samo posao, već i obaveza i odgovornost da klijentima pružim uspomene koje će trajati zauvek.
-            Moj pristup je iskren i direktan — kombinujem tehničku preciznost sa emocijom trenutka. Bilo da je u pitanju venčanje, osamnaesti rođendan ili prva proslava, moj cilj je da svaka fotografija bude autentična i verna vašem danu.
+          <p className="text-muted-foreground leading-relaxed font-light whitespace-pre-line">
+            {t("about.text")}
           </p>
           <a href="/kontakt" className="link-underline heading-caps text-xs inline-block mt-4">
-            KONTAKTIRAJ ME
+            {t("about.cta")}
           </a>
         </div>
 

@@ -12,7 +12,7 @@ const images = [
   image.gallery7,
   image.gallery8,
   image.gallery9,
-  image.gallery10
+  
 ];
 
 const HorizontalGallery = () => {

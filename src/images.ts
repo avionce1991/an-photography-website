@@ -12,7 +12,7 @@ import gallery6 from "@/assets/gallery-6.jpg";
 import gallery7 from "@/assets/gallery-7.jpg";
 import gallery8 from "@/assets/gallery-8.jpg";
 import gallery9 from "@/assets/gallery-9.jpg";
-import gallery10 from "@/assets/gallery-10.jpg";
+
 import heroWedding from "@/assets/hero-wedding.jpg";
 import photographerPortrait from "@/assets/photographer-portrait.jpg";
 import logo from "@/assets/logo.png";
@@ -52,7 +52,7 @@ export const image = {
     gallery7,
     gallery8,
     gallery9,
-    gallery10,
+    
     heroWedding,
     photographerPortrait,
     logo

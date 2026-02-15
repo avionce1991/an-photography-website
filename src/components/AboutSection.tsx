@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import photographerImg from "@/assets/photographer-portrait.jpg";
+import { image } from "../images";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const AboutSection = () => {
@@ -45,7 +45,7 @@ const AboutSection = () => {
         >
           <div className="aspect-[3/4] overflow-hidden">
             <img
-              src={photographerImg}
+              src={image.photographerPortrait}
               alt="Aleksandar Ničić - Wedding Photographer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />

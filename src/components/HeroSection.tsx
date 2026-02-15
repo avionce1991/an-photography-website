@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import heroImg from "@/assets/hero-wedding.jpg";
+import { image } from "../images";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const HeroSection = () => {
@@ -14,7 +14,7 @@ const HeroSection = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <img
-        src={heroImg}
+        src={image.heroWedding}
         alt="Wedding photography by Aleksandar Ničić"
         className={`absolute inset-0 w-full h-full object-cover object-bottom transition-all duration-[2s] ${
           loaded ? "scale-100 opacity-100" : "scale-110 opacity-0"

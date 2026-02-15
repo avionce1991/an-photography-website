@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import { image } from "../images";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -25,7 +25,7 @@ const Header = () => {
           <h1 className="font-serif text-sm md:text-xl tracking-[0.3em] font-light uppercase whitespace-nowrap">
             Aleksandar Ničić
           </h1>
-          <img src={logo} alt="AN Logo" className="h-7 md:h-9 w-auto" />
+          <img src={image.logo} alt="AN Logo" className="h-7 md:h-9 w-auto" />
         </Link>
         
         <div className="flex-1 flex items-center justify-end gap-4 md:gap-6">

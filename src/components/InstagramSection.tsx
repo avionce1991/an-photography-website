@@ -2,12 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Instagram } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-import masonry1 from "@/assets/masonry-1.jpg";
-import masonry2 from "@/assets/masonry-2.jpg";
-import masonry3 from "@/assets/masonry-3.jpg";
-import masonry4 from "@/assets/masonry-4.jpg";
+import { image } from "../images";
 
-const images = [masonry1, masonry2, masonry3, masonry4];
+const images = [image.masonry1, image.masonry2, image.masonry3, image.masonry4];
 
 const InstagramSection = () => {
   const ref = useRef<HTMLDivElement>(null);

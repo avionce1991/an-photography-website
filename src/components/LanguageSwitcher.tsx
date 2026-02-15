@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
         className="flex items-center gap-1.5 heading-caps text-xs tracking-[0.15em] hover:opacity-60 transition-opacity"
         aria-label="Select language"
       >
-        <span className="text-sm">{current.flag}</span>
+        <span className="text-base leading-none">{current.flag}</span>
         <span>{current.code}</span>
       </button>
 

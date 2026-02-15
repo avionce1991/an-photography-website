@@ -13,7 +13,6 @@ const Header = () => {
   const navItems = [
     { label: t("nav.home"), path: "/" },
     { label: t("nav.contact"), path: "/kontakt" },
-    { label: t("nav.calendar"), path: "/kalendar" },
   ];
 
   return (

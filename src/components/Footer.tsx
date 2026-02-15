@@ -22,10 +22,11 @@ const Footer = () => {
             href="https://www.instagram.com/an_photography91"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-2 heading-caps text-xs text-muted-foreground hover:text-foreground transition-colors"
             aria-label="Instagram"
           >
             <Instagram size={18} strokeWidth={1} />
+            <span>an_photography91</span>
           </a>
           
           <a

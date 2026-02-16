@@ -46,7 +46,7 @@ const LanguageSwitcher = () => {
         aria-label="Select language"
       >
         <img src={current.flag} alt="" className="w-5 h-auto rounded-sm" />
-        <span>{current.code}</span>
+        <span className="hidden md:inline">{current.code}</span>
       </button>
 
       {open && (

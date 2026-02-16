@@ -8,11 +8,11 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const { t } = useLanguage();
+  const { t, localePath } = useLanguage();
 
   const navItems = [
-    { label: t("nav.home"), path: "/" },
-    { label: t("nav.contact"), path: "/kontakt" },
+    { label: t("nav.home"), path: localePath("/") },
+    { label: t("nav.contact"), path: localePath("/kontakt") },
   ];
 
   return (
@@ -20,7 +20,7 @@ const Header = () => {
       <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-12 py-4 md:py-6 bg-background/80 backdrop-blur-sm">
         <div className="flex-1" />
         
-        <Link to="/" className="flex items-center gap-2 md:gap-3">
+        <Link to={localePath("/")} className="flex items-center gap-2 md:gap-3">
           <img src={image.logo} alt="AN Logo" className="h-7 md:h-9 w-auto" />
           <h1 className="font-serif text-sm md:text-xl tracking-[0.3em] font-light uppercase whitespace-nowrap">
             Aleksandar Ničić

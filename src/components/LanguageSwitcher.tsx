@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { Language, languageNames } from "@/i18n/translations";
 
@@ -8,6 +9,8 @@ const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -21,6 +24,20 @@ const LanguageSwitcher = () => {
 
   const current = languageNames[language];
 
+  const switchLanguage = (lang: Language) => {
+    setLanguage(lang);
+    // Replace the language prefix in the current path
+    const pathParts = location.pathname.split("/").filter(Boolean);
+    const validLangs: string[] = ["en", "sr", "gr"];
+    if (pathParts.length > 0 && validLangs.includes(pathParts[0])) {
+      pathParts[0] = lang;
+    } else {
+      pathParts.unshift(lang);
+    }
+    navigate("/" + pathParts.join("/"));
+    setOpen(false);
+  };
+
   return (
     <div ref={ref} className="relative">
       <button
@@ -28,7 +45,7 @@ const LanguageSwitcher = () => {
         className="flex items-center gap-1.5 heading-caps text-xs tracking-[0.15em] hover:opacity-60 transition-opacity"
         aria-label="Select language"
       >
-        <span className="text-base leading-none">{current.flag}</span>
+        <img src={current.flag} alt="" className="w-5 h-auto rounded-sm" />
         <span>{current.code}</span>
       </button>
 
@@ -39,15 +56,12 @@ const LanguageSwitcher = () => {
             return (
               <button
                 key={lang}
-                onClick={() => {
-                  setLanguage(lang);
-                  setOpen(false);
-                }}
+                onClick={() => switchLanguage(lang)}
                 className={`w-full flex items-center gap-2.5 px-4 py-2.5 text-left heading-caps text-xs tracking-[0.1em] hover:bg-accent transition-colors ${
                   lang === language ? "opacity-100" : "opacity-60"
                 }`}
               >
-                <span className="text-sm">{info.flag}</span>
+                <img src={info.flag} alt="" className="w-5 h-auto rounded-sm" />
                 <span>{info.code}</span>
               </button>
             );

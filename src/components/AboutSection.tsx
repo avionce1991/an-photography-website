@@ -33,7 +33,7 @@ const AboutSection = () => {
           <p className="text-muted-foreground leading-relaxed font-light whitespace-pre-line">
             {t("about.text")}
           </p>
-          <a href="/kontakt" className="link-underline heading-caps text-xs inline-block mt-4">
+          <a href={`/${localStorage.getItem("lang") || "en"}/kontakt`} className="link-underline heading-caps text-xs inline-block mt-4">
             {t("about.cta")}
           </a>
         </div>

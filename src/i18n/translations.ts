@@ -56,6 +56,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "calendar.booked": "Booked",
     "calendar.months": "January,February,March,April,May,June,July,August,September,October,November,December",
     "calendar.days": "Mon,Tue,Wed,Thu,Fri,Sat,Sun",
+
+    // Cookie consent
+    "cookie.text": "This website uses cookies to improve your experience and for analytics purposes.",
+    "cookie.accept": "Accept",
+    "cookie.decline": "Decline",
   },
 
   sr: {
@@ -113,6 +118,11 @@ export const translations: Record<Language, Record<string, string>> = {
     "calendar.booked": "Rezervisano",
     "calendar.months": "Januar,Februar,Mart,April,Maj,Jun,Jul,Avgust,Septembar,Oktobar,Novembar,Decembar",
     "calendar.days": "Pon,Uto,Sre,Čet,Pet,Sub,Ned",
+
+    // Cookie consent
+    "cookie.text": "Ovaj sajt koristi kolačiće za poboljšanje iskustva i analitiku.",
+    "cookie.accept": "Prihvati",
+    "cookie.decline": "Odbij",
   },
 
   gr: {
@@ -170,11 +180,16 @@ export const translations: Record<Language, Record<string, string>> = {
     "calendar.booked": "Κρατημένο",
     "calendar.months": "Ιανουάριος,Φεβρουάριος,Μάρτιος,Απρίλιος,Μάιος,Ιούνιος,Ιούλιος,Αύγουστος,Σεπτέμβριος,Οκτώβριος,Νοέμβριος,Δεκέμβριος",
     "calendar.days": "Δευ,Τρί,Τετ,Πέμ,Παρ,Σάβ,Κυρ",
+
+    // Cookie consent
+    "cookie.text": "Αυτός ο ιστότοπος χρησιμοποιεί cookies για βελτίωση της εμπειρίας σας και για αναλυτικά στοιχεία.",
+    "cookie.accept": "Αποδοχή",
+    "cookie.decline": "Απόρριψη",
   },
 };
 
 export const languageNames: Record<Language, { code: string; name: string; flag: string }> = {
-  en: { code: "EN", name: "English", flag: "🇬🇧" },
-  sr: { code: "SR", name: "Srpski", flag: "🇷🇸" },
-  gr: { code: "GR", name: "Ελληνικά", flag: "🇬🇷" },
+  en: { code: "EN", name: "English", flag: "/flags/gb.png" },
+  sr: { code: "SR", name: "Srpski", flag: "/flags/rs.png" },
+  gr: { code: "GR", name: "Ελληνικά", flag: "/flags/gr.png" },
 };

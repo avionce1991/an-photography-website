@@ -49,7 +49,7 @@ const StorySection = () => {
             </p>
           </div>
 
-          <Link to="/kontakt" className="link-underline heading-caps text-sm">
+          <Link to={`/${localStorage.getItem("lang") || "en"}/kontakt`} className="link-underline heading-caps text-sm">
             {t("story.cta")}
           </Link>
         </div>

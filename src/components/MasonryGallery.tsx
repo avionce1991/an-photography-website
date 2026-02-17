@@ -2,15 +2,14 @@ import { useEffect, useRef, useState, useCallback } from "react";
 
 import { image } from "../images";
 
-// 32 images to fill 4 columns evenly (8 per column)
 const allImages = [
-  image.masonry1, image.masonry2, image.masonry3, image.masonry4, image.masonry5,
-  image.gallery1, image.gallery2, image.gallery3, image.gallery4, image.gallery5,
-  image.gallery6, image.gallery7, image.gallery8, image.gallery9, image.masonry1,
-  image.masonry2, image.masonry3, image.masonry4, image.masonry5, image.gallery1,
-  image.gallery2, image.gallery3, image.gallery4, image.gallery5, image.gallery6,
-  image.gallery7, image.gallery8, image.gallery9, image.masonry1, image.masonry2,
-  image.masonry3, image.masonry4,
+  image.masonry7, image.masonry2, image.masonry10, image.masonry15, image.masonry4,
+  image.masonry28, image.masonry12, image.masonry21, image.masonry9, image.masonry29,
+  image.masonry1, image.masonry18, image.masonry5, image.masonry14, image.masonry31,
+  image.masonry8, image.masonry20, image.masonry3, image.masonry11, image.masonry25,
+  image.masonry6, image.masonry17, image.masonry32, image.masonry23, image.masonry13,
+  image.masonry19, image.masonry16, image.masonry22, image.masonry24, image.masonry27, 
+  image.masonry26, image.masonry30
 ];
 
 const MasonryImage = ({ src, alt, delay }: { src: string; alt: string; delay: number }) => {
@@ -62,39 +61,42 @@ const MasonryGallery = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8">
-      {/* Desktop: 4 columns */}
-      <div className="hidden md:grid grid-cols-4 gap-4">
-        {getColumns(4).map((col, colIdx) => (
-          <div key={colIdx} className="flex flex-col gap-4">
-            {col.map((img, imgIdx) => (
-              <MasonryImage
-                key={imgIdx}
-                src={img}
-                alt={`Wedding photography ${colIdx * 8 + imgIdx + 1}`}
-                delay={colIdx * 80}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
+    <>
+      <div dangerouslySetInnerHTML={{ __html: '<!-- COMPONENT: MasonryGallery -->' }} />
+      <section className="py-16 md:py-24 px-4 md:px-8">
+        {/* Desktop: 4 columns */}
+        <div className="hidden md:grid grid-cols-4 gap-4">
+          {getColumns(4).map((col, colIdx) => (
+            <div key={colIdx} className="flex flex-col gap-4">
+              {col.map((img, imgIdx) => (
+                <MasonryImage
+                  key={imgIdx}
+                  src={img}
+                  alt={`Wedding photography ${colIdx * 8 + imgIdx + 1}`}
+                  delay={colIdx * 80}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
 
-      {/* Mobile: 2 columns */}
-      <div className="grid md:hidden grid-cols-2 gap-3">
-        {getColumns(2).map((col, colIdx) => (
-          <div key={colIdx} className="flex flex-col gap-3">
-            {col.map((img, imgIdx) => (
-              <MasonryImage
-                key={imgIdx}
-                src={img}
-                alt={`Wedding photography ${colIdx * 15 + imgIdx + 1}`}
-                delay={colIdx * 60}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
-    </section>
+        {/* Mobile: 2 columns */}
+        <div className="grid md:hidden grid-cols-2 gap-3">
+          {getColumns(2).map((col, colIdx) => (
+            <div key={colIdx} className="flex flex-col gap-3">
+              {col.map((img, imgIdx) => (
+                <MasonryImage
+                  key={imgIdx}
+                  src={img}
+                  alt={`Wedding photography ${colIdx * 15 + imgIdx + 1}`}
+                  delay={colIdx * 60}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 

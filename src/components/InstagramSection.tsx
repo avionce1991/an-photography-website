@@ -4,7 +4,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 import { image } from "../images";
 
-const images = [image.masonry1, image.masonry2, image.masonry3, image.masonry4];
+const images = [ image.instagram1,image.instagram2,image.instagram3,image.instagram4];
 
 const InstagramSection = () => {
   const ref = useRef<HTMLDivElement>(null);

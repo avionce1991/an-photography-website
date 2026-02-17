@@ -5,14 +5,13 @@ import { image } from "../images";
 const images = [
   image.gallery1,
   image.gallery2,
-  image.gallery3,
+  image.gallery8,
   image.gallery4,
+  image.gallery3, 
   image.gallery5,
   image.gallery6,
   image.gallery7,
-  image.gallery8,
   image.gallery9,
-  
 ];
 
 const HorizontalGallery = () => {
@@ -47,6 +46,8 @@ const HorizontalGallery = () => {
   const totalImages = images.length;
 
   return (
+    <>
+     <div dangerouslySetInnerHTML={{ __html: '<!-- COMPONENT: HorizontalGallery -->' }} />
     <section
       ref={sectionRef}
       style={{ height: `${totalImages * 100}vh` }}
@@ -78,6 +79,7 @@ const HorizontalGallery = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

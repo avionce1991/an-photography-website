@@ -12,6 +12,7 @@ const Header = () => {
 
   const navItems = [
     { label: t("nav.home"), path: localePath("/") },
+    { label: t("nav.gallery"), path: localePath("/galerija") },
     { label: t("nav.contact"), path: localePath("/kontakt") },
   ];
 

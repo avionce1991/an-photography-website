@@ -6,6 +6,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.home": "Home",
     "nav.contact": "Contact",
     "nav.calendar": "Calendar",
+    "nav.gallery": "Gallery",
     "nav.menu": "MENU",
 
     // Hero
@@ -68,6 +69,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.home": "Početna",
     "nav.contact": "Kontakt",
     "nav.calendar": "Kalendar",
+    "nav.gallery": "Galerija",
     "nav.menu": "MENI",
 
     // Hero
@@ -130,6 +132,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.home": "Αρχική",
     "nav.contact": "Επικοινωνία",
     "nav.calendar": "Ημερολόγιο",
+    "nav.gallery": "Γκαλερί",
     "nav.menu": "ΜΕΝΟΥ",
 
     // Hero

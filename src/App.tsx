@@ -10,6 +10,7 @@ import LanguageRedirect from "./components/LanguageRedirect";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import Calendar from "./pages/Calendar";
+import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 import MetaPixel from "./components/MetaPixel";
 
@@ -28,6 +29,7 @@ const App = () => (
               <Route path="/" element={<LanguageRedirect />} />
               <Route path="/:lang" element={<LanguageRoute />}>
                 <Route index element={<Index />} />
+                <Route path="galerija" element={<Gallery />} />
                 <Route path="kontakt" element={<Contact />} />
                 {/* <Route path="kalendar" element={<Calendar />} /> */}
               </Route>

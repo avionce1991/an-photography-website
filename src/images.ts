@@ -31,6 +31,21 @@ import masonry30 from "@/assets/masonry-30.jpg";
 import masonry31 from "@/assets/masonry-31.jpg";
 import masonry32 from "@/assets/masonry-32.jpg";
 import masonry33 from "@/assets/masonry-33.jpg";
+import masonry34 from "@/assets/masonry-34.jpg";
+import masonry35 from "@/assets/masonry-35.jpg";
+import masonry36 from "@/assets/masonry-36.jpg";
+import masonry37 from "@/assets/masonry-37.jpg";
+import masonry38 from "@/assets/masonry-38.jpg";
+import masonry39 from "@/assets/masonry-39.jpg";
+import masonry40 from "@/assets/masonry-40.jpg";
+import masonry41 from "@/assets/masonry-41.jpg";
+import masonry42 from "@/assets/masonry-42.jpg";
+import masonry43 from "@/assets/masonry-43.jpg";
+import masonry44 from "@/assets/masonry-44.jpg";
+import masonry45 from "@/assets/masonry-45.jpg";
+import masonry46 from "@/assets/masonry-46.jpg";
+import masonry47 from "@/assets/masonry-47.jpg";
+
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -83,6 +98,21 @@ export {
     masonry31,
     masonry32,
     masonry33,
+    masonry34,
+    masonry35,
+    masonry36,
+    masonry37,
+    masonry38,
+    masonry39,
+    masonry40,
+    masonry41,
+    masonry42,
+    masonry43,
+    masonry44,
+    masonry45,
+    masonry46,
+    masonry47,
+
     gallery1,
     gallery2,
     gallery3,
@@ -135,6 +165,20 @@ export const image = {
     masonry31,
     masonry32,
     masonry33,
+    masonry34,
+    masonry35,
+    masonry36,
+    masonry37,
+    masonry38,
+    masonry39,
+    masonry40,
+    masonry41,
+    masonry42,
+    masonry43,
+    masonry44,
+    masonry45,
+    masonry46,
+    masonry47,
     gallery1,
     gallery2,
     gallery3,

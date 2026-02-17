@@ -130,20 +130,6 @@ import lg129 from "@/assets/landscape-gallery-129.jpg";
 import lg130 from "@/assets/landscape-gallery-130.jpg";
 import lg131 from "@/assets/landscape-gallery-131.jpg";
 import lg132 from "@/assets/landscape-gallery-132.jpg";
-import lg133 from "@/assets/landscape-gallery-133.jpg";
-import lg134 from "@/assets/landscape-gallery-134.jpg";
-import lg135 from "@/assets/landscape-gallery-135.jpg";
-import lg136 from "@/assets/landscape-gallery-136.jpg";
-import lg137 from "@/assets/landscape-gallery-137.jpg";
-import lg138 from "@/assets/landscape-gallery-138.jpg";
-import lg139 from "@/assets/landscape-gallery-139.jpg";
-import lg140 from "@/assets/landscape-gallery-140.jpg";
-import lg141 from "@/assets/landscape-gallery-141.jpg";
-import lg142 from "@/assets/landscape-gallery-142.jpg";
-import lg143 from "@/assets/landscape-gallery-143.jpg";
-import lg144 from "@/assets/landscape-gallery-144.jpg";
-import lg145 from "@/assets/landscape-gallery-145.jpg";
-import lg146 from "@/assets/landscape-gallery-146.jpg";
 
 export const landscapeImages = [
   lg1, lg2, lg3, lg4, lg5, lg6, lg7, lg8, lg9, lg10,
@@ -159,6 +145,5 @@ export const landscapeImages = [
   lg101, lg102, lg103, lg104, lg105, lg106, lg107, lg108, lg109, lg110,
   lg111, lg112, lg113, lg114, lg115, lg116, lg117, lg118, lg119, lg120,
   lg121, lg122, lg123, lg124, lg125, lg126, lg127, lg128, lg129, lg130,
-  lg131, lg132, lg133, lg134, lg135, lg136, lg137, lg138, lg139, lg140,
-  lg141, lg142, lg143, lg144, lg145, lg146,
+  lg131, lg132
 ];

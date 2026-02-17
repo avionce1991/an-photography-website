@@ -45,9 +45,29 @@ const LandscapeGalleryImage = ({ src, index }: { src: string; index: number }) =
   );
 };
 
-const LandscapeGallery = () => {
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+const BATCH_SIZE = 10;
 
+const LandscapeGallery = () => {
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const loaderRef = useRef<HTMLDivElement>(null);
+
+  // Load more images when sentinel becomes visible
+  useEffect(() => {
+    if (visibleCount >= landscapeImages.length) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, landscapeImages.length));
+        }
+      },
+      { rootMargin: "600px" }
+    );
+    if (loaderRef.current) observer.observe(loaderRef.current);
+    return () => observer.disconnect();
+  }, [visibleCount]);
+
+  const visibleImages = landscapeImages.slice(0, visibleCount);
   const openLightbox = useCallback((index: number) => {
     setLightboxIndex(index);
     document.body.style.overflow = "hidden";
@@ -90,7 +110,7 @@ const LandscapeGallery = () => {
       { length: count },
       () => []
     );
-    landscapeImages.forEach((img, i) => {
+    visibleImages.forEach((img, i) => {
       cols[i % count].push({ src: img, originalIndex: i });
     });
     return cols;
@@ -135,6 +155,13 @@ const LandscapeGallery = () => {
           </div>
         ))}
       </div>
+
+      {/* Load more sentinel */}
+      {visibleCount < landscapeImages.length && (
+        <div ref={loaderRef} className="flex justify-center py-8">
+          <div className="w-6 h-6 border-2 border-white/30 border-t-white/80 rounded-full animate-spin" />
+        </div>
+      )}
 
       {/* Lightbox */}
       {lightboxIndex !== null && (

@@ -117,7 +117,7 @@ const LandscapeGallery = () => {
   };
 
   return (
-    <section className="bg-black pt-32 pb-16 md:pt-40 md:pb-24 px-4 md:px-8 lg:px-12">
+    <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4 md:px-8 lg:px-12">
       {/* Desktop: 3 columns */}
       <div className="hidden md:grid grid-cols-3 gap-3 lg:gap-4">
         {getColumns(3).map((col, colIdx) => (

@@ -21,11 +21,12 @@ const Contact = () => {
     };
 
     try {
-      const res = await fetch("https://an-photography-website.onrender.com", {
+      const res = await fetch("https://an-photography-website.onrender.com/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
 
       if (res.ok) {
         alert("Poruka poslata!");
